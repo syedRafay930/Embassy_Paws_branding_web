@@ -1,0 +1,125 @@
+export const SERVICES = [
+  {
+    id: "boarding",
+    title: "Pet Boarding",
+    description:
+      "Comfortable, supervised stays so your pet feels at home while you’re away.",
+    anchor: "boarding",
+  },
+  {
+    id: "night",
+    title: "Night Boarding & Home Stays",
+    description:
+      "Overnight care and home-style stays with attentive overnight staff.",
+    anchor: "boarding",
+  },
+  {
+    id: "daycare",
+    title: "Day Care & Training",
+    description:
+      "Daytime play, enrichment, and training that keep tails wagging.",
+    anchor: "services",
+  },
+] as const;
+
+export const TRUST_POINTS = [
+  "Certified pet travel specialists for every destination",
+  "Door-to-door relocation with live status updates",
+  "Vet-approved crates, documents, and health checks",
+  "Transparent pricing with no last-minute surprises",
+  "24/7 support line for pet parents on the move",
+] as const;
+
+export const APP_FEATURES = [
+  "Track boarding and relocation in real time",
+  "Store vet records and travel documents",
+  "Book taxi, boarding, and grooming in one place",
+] as const;
+
+export const IMPACT_STATS = [
+  { value: "3000+", label: "Happy Tails", tone: "gold" },
+  { value: "35+", label: "Locations", tone: "blue" },
+  { value: "100+", label: "Destinations", tone: "orange" },
+  { value: "50+", label: "Specialists", tone: "tan" },
+] as const;
+
+export const FEATURE_GRID = [
+  {
+    title: "Pet Relocation",
+    description: "End-to-end international and domestic pet moves.",
+  },
+  {
+    title: "Boarding",
+    description: "Safe suites and home stays when you travel.",
+  },
+  {
+    title: "Pet Taxi",
+    description: "Reliable rides to airports, clinics, and hotels.",
+  },
+  {
+    title: "Vet Support",
+    description: "Health checks and document prep before takeoff.",
+  },
+  {
+    title: "Grooming",
+    description: "Travel-ready grooming so your pet feels great.",
+  },
+  {
+    title: "Travel Plans",
+    description: "Custom itineraries built around your pet’s needs.",
+  },
+] as const;
+
+export const CATEGORIES = [
+  {
+    title: "Best Dogs for Home",
+    description: "Dog Transport Services",
+    tone: "gold",
+  },
+  {
+    title: "Cat Care and Kittens",
+    description: "Cat Transport Services",
+    tone: "lavender",
+  },
+] as const;
+
+export const REVIEWS = [
+  {
+    name: "Sarah Mitchell",
+    quote:
+      "Embassy Paws handled our move abroad with so much care. Our dog arrived calm and happy — we felt supported the whole way.",
+  },
+  {
+    name: "James Carter",
+    quote:
+      "Boarding felt like a second home. Daily updates and photos made leaving our pup stress-free.",
+  },
+  {
+    name: "Aisha Rahman",
+    quote:
+      "The pet taxi and document help saved us days of paperwork. Truly a one-stop journey partner.",
+  },
+] as const;
+
+export const FAQS = [
+  {
+    question: "How early should I book pet relocation?",
+    answer:
+      "We recommend starting 4–8 weeks before travel for domestic moves, and 8–12 weeks for international routes so documents and airline slots are secured.",
+  },
+  {
+    question: "Do you help with vet certificates and paperwork?",
+    answer:
+      "Yes. Our team coordinates health certificates, microchip checks, and destination requirements so your pet is travel-ready.",
+  },
+  {
+    question: "What is included in pet boarding?",
+    answer:
+      "Supervised care, feeding schedules, playtime, and daily updates. Night boarding and home stays are available for longer trips.",
+  },
+  {
+    question: "Can I track my pet during transport?",
+    answer:
+      "Absolutely. You’ll receive status updates through our app and support line from pickup through arrival.",
+  },
+] as const;
