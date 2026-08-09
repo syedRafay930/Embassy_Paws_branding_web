@@ -1,23 +1,29 @@
 export const SERVICES = [
   {
-    id: "boarding",
-    title: "Pet Boarding",
+    id: "relocation",
+    title: "Pet Relocation",
+    price: "$18.99",
     description:
-      "Comfortable, supervised stays so your pet feels at home while you’re away.",
+      "Seamless domestic and international relocation with full documentation, airline coordination, and safety compliance.",
+    image: "/services-relocation.png",
+    anchor: "relocation",
+  },
+  {
+    id: "flight",
+    title: "Flight Booking & Crate Setup",
+    price: "$18.99",
+    description:
+      "We arrange pet-friendly flights and provide airline-approved crates for maximum comfort and security.",
+    image: "/services-flight-crate.png",
     anchor: "boarding",
   },
   {
-    id: "night",
-    title: "Night Boarding & Home Stays",
+    id: "vet",
+    title: "Vet & Documentation Support",
+    price: "$18.99",
     description:
-      "Overnight care and home-style stays with attentive overnight staff.",
-    anchor: "boarding",
-  },
-  {
-    id: "daycare",
-    title: "Day Care & Training",
-    description:
-      "Daytime play, enrichment, and training that keep tails wagging.",
+      "Health certificates, vaccinations, and paperwork handled by professionals to avoid delays or issues.",
+    image: "/services-vet-docs.png",
     anchor: "services",
   },
 ] as const;

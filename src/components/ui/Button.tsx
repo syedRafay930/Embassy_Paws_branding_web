@@ -12,6 +12,7 @@ type ButtonProps = {
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   sparkle?: boolean;
+  sparkleColor?: "gold" | "white";
   rounded?: "md" | "full" | "xl";
   onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 };
@@ -39,8 +40,10 @@ const roundedClasses = {
   full: "rounded-full",
 } as const;
 
-/** Three gold rays sitting on the top-right outer corner of the button. */
-function BorderSparkle() {
+/** Three texture rays on the top-right outer corner of the button. */
+function BorderSparkle({ color = "gold" }: { color?: "gold" | "white" }) {
+  const stroke = color === "white" ? "#ffffff" : "#c19a6b";
+
   return (
     <svg
       className="pointer-events-none absolute -right-2 -top-2 h-7 w-7 overflow-visible"
@@ -50,19 +53,19 @@ function BorderSparkle() {
     >
       <path
         d="M14 2 L22 10"
-        stroke="#c19a6b"
+        stroke={stroke}
         strokeWidth="1.6"
         strokeLinecap="round"
       />
       <path
         d="M18 2.5 L24 8.5"
-        stroke="#c19a6b"
+        stroke={stroke}
         strokeWidth="1.6"
         strokeLinecap="round"
       />
       <path
         d="M22.5 5 L26.5 12"
-        stroke="#c19a6b"
+        stroke={stroke}
         strokeWidth="1.6"
         strokeLinecap="round"
       />
@@ -79,6 +82,7 @@ export function Button({
   type = "button",
   disabled,
   sparkle = false,
+  sparkleColor = "gold",
   rounded = "md",
   onClick,
 }: ButtonProps) {
@@ -94,7 +98,7 @@ export function Button({
   const content = (
     <>
       {children}
-      {sparkle ? <BorderSparkle /> : null}
+      {sparkle ? <BorderSparkle color={sparkleColor} /> : null}
     </>
   );
 
