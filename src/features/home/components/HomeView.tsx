@@ -1,8 +1,8 @@
 import { Footer, Header } from "@/components/layout";
-import { AppPromoSection } from "./AppPromoSection";
 import { AssessmentSection } from "./AssessmentSection";
 import { CategoriesSection } from "./CategoriesSection";
 import { CtaBannerSection } from "./CtaBannerSection";
+import { DevicePortalSection } from "./DevicePortalSection";
 import { FaqQuoteSection } from "./FaqQuoteSection";
 import { FeaturesSection } from "./FeaturesSection";
 import { Hero } from "./Hero";
@@ -16,13 +16,13 @@ export function HomeView() {
   return (
     <>
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <AssessmentSection />
         <KnowUsSection />
         <ServicesSection />
         <WhyChooseUsSection />
-        <AppPromoSection />
+        <DevicePortalSection />
         <ImpactStatsSection />
         <FeaturesSection />
         <CategoriesSection />

@@ -50,10 +50,34 @@ export const APP_FEATURES = [
 ] as const;
 
 export const IMPACT_STATS = [
-  { value: "3000+", label: "Happy Tails", tone: "gold" },
-  { value: "35+", label: "Locations", tone: "blue" },
-  { value: "100+", label: "Destinations", tone: "orange" },
-  { value: "50+", label: "Specialists", tone: "tan" },
+  {
+    value: "360+",
+    label: "Pet Journey",
+    tone: "gold",
+    shape: "starburst",
+    offset: "mt-2",
+  },
+  {
+    value: "35+",
+    label: "Travel Specialists",
+    tone: "blue",
+    shape: "scallop",
+    offset: "-mt-1",
+  },
+  {
+    value: "10K+",
+    label: "Happy Pet Parents",
+    tone: "peach",
+    shape: "blob",
+    offset: "mt-3",
+  },
+  {
+    value: "99+",
+    label: "Global Places",
+    tone: "tan",
+    shape: "softburst",
+    offset: "mt-0",
+  },
 ] as const;
 
 export const FEATURE_GRID = [

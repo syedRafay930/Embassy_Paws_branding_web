@@ -5,7 +5,7 @@ import { WHY_CHOOSE_POINTS } from "../data";
 
 export function WhyChooseUsSection() {
   return (
-    <section className="relative overflow-hidden border-b-[10px] border-gold bg-[#f7f3ea] py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-[#f7f3ea] py-16 lg:py-24">
       <Container className="relative z-10 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left — image composition with gap; stripes overlap top of both photos */}
         <div className="relative mx-auto flex w-full max-w-lg items-end justify-center gap-5 pt-8 sm:gap-7 sm:pt-10 lg:mx-0 lg:max-w-none">
@@ -107,7 +107,7 @@ export function WhyChooseUsSection() {
         </div>
       </Container>
 
-      {/* Jumping dog — original colors, transparent bg, bottom-right */}
+      {/* Jumping dog — lower body covered by gold section below */}
       <Image
         src="/why-choose-jumping-dog.png"
         alt=""
