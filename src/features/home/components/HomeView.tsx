@@ -10,7 +10,7 @@ import { ImpactStatsSection } from "./ImpactStatsSection";
 import { KnowUsSection } from "./KnowUsSection";
 import { ReviewsSection } from "./ReviewsSection";
 import { ServicesSection } from "./ServicesSection";
-import { TrustSection } from "./TrustSection";
+import { WhyChooseUsSection } from "./WhyChooseUsSection";
 
 export function HomeView() {
   return (
@@ -21,7 +21,7 @@ export function HomeView() {
         <AssessmentSection />
         <KnowUsSection />
         <ServicesSection />
-        <TrustSection />
+        <WhyChooseUsSection />
         <AppPromoSection />
         <ImpactStatsSection />
         <FeaturesSection />

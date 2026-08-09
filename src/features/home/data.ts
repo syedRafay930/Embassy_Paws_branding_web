@@ -36,6 +36,13 @@ export const TRUST_POINTS = [
   "24/7 support line for pet parents on the move",
 ] as const;
 
+export const WHY_CHOOSE_POINTS = [
+  "Safe, Comfortable Travel for Every Pet",
+  "Expert Handling from Start to Finish",
+  "End-to-End Support You Can Rely On",
+  "End-to-End Support You Can Rely On",
+] as const;
+
 export const APP_FEATURES = [
   "Track boarding and relocation in real time",
   "Store vet records and travel documents",
