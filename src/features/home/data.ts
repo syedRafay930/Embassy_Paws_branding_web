@@ -109,13 +109,13 @@ export const FEATURE_GRID = [
 
 export const CATEGORIES = [
   {
-    title: "Best Dogs for Home",
-    description: "Dog Transport Services",
+    title: "Dog Transport Services",
+    image: "/categories-dog.png",
     tone: "gold",
   },
   {
-    title: "Cat Care and Kittens",
-    description: "Cat Transport Services",
+    title: "Cat Transport Services",
+    image: "/categories-cat.png",
     tone: "lavender",
   },
 ] as const;
