@@ -4,10 +4,10 @@ import { CategoriesSection } from "./CategoriesSection";
 import { CtaBannerSection } from "./CtaBannerSection";
 import { DevicePortalSection } from "./DevicePortalSection";
 import { FaqQuoteSection } from "./FaqQuoteSection";
-import { FeaturesSection } from "./FeaturesSection";
 import { Hero } from "./Hero";
 import { ImpactStatsSection } from "./ImpactStatsSection";
 import { KnowUsSection } from "./KnowUsSection";
+import { ResourcesSection } from "./ResourcesSection";
 import { ReviewsSection } from "./ReviewsSection";
 import { ServicesSection } from "./ServicesSection";
 import { WhyChooseUsSection } from "./WhyChooseUsSection";
@@ -24,7 +24,7 @@ export function HomeView() {
         <WhyChooseUsSection />
         <DevicePortalSection />
         <ImpactStatsSection />
-        <FeaturesSection />
+        <ResourcesSection />
         <CategoriesSection />
         <CtaBannerSection />
         <ReviewsSection />
