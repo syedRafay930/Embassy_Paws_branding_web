@@ -4,3 +4,4 @@ export { SectionHeading } from "./SectionHeading";
 export { Input } from "./Input";
 export { Textarea } from "./Textarea";
 export { ImagePlaceholder } from "./ImagePlaceholder";
+export { NewsletterPopup } from "./NewsletterPopup";

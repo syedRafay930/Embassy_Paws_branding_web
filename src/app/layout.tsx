@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { NewsletterPopup } from "@/components/ui";
 import { StoreProvider } from "@/store/provider";
 import "./globals.css";
 
@@ -32,7 +33,10 @@ export default function RootLayout({
       className={`${jakarta.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          {children}
+          <NewsletterPopup />
+        </StoreProvider>
       </body>
     </html>
   );
