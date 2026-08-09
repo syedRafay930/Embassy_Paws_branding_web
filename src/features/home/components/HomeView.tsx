@@ -1,5 +1,4 @@
 import { Footer, Header } from "@/components/layout";
-import { AboutSection } from "./AboutSection";
 import { AppPromoSection } from "./AppPromoSection";
 import { AssessmentSection } from "./AssessmentSection";
 import { CategoriesSection } from "./CategoriesSection";
@@ -8,6 +7,7 @@ import { FaqQuoteSection } from "./FaqQuoteSection";
 import { FeaturesSection } from "./FeaturesSection";
 import { Hero } from "./Hero";
 import { ImpactStatsSection } from "./ImpactStatsSection";
+import { KnowUsSection } from "./KnowUsSection";
 import { ReviewsSection } from "./ReviewsSection";
 import { ServicesSection } from "./ServicesSection";
 import { TrustSection } from "./TrustSection";
@@ -19,7 +19,7 @@ export function HomeView() {
       <main>
         <Hero />
         <AssessmentSection />
-        <AboutSection />
+        <KnowUsSection />
         <ServicesSection />
         <TrustSection />
         <AppPromoSection />
