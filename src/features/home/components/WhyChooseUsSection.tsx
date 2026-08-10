@@ -15,7 +15,7 @@ export function WhyChooseUsSection() {
             alt=""
             width={220}
             height={220}
-            className="pointer-events-none absolute left-1/2 top-0 z-20 h-32 w-32 -translate-x-1/2 object-contain mix-blend-multiply opacity-95 sm:h-40 sm:w-40 lg:h-44 lg:w-44"
+            className="pointer-events-none absolute left-[18%] top-0 z-20 h-32 w-32 -translate-x-1/2 object-contain mix-blend-multiply opacity-95 sm:h-40 sm:w-40 lg:h-44 lg:w-44"
             aria-hidden
           />
 

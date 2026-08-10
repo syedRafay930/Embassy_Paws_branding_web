@@ -59,13 +59,13 @@ export function CategoriesSection() {
       />
 
       {/* Cartoon cat + rings — top right */}
-      <div className="pointer-events-none absolute -right-2 top-4 z-0 sm:right-4 sm:top-6 lg:right-16 lg:top-8">
+      <div className="pointer-events-none absolute right-6 top-4 z-0 sm:right-12 sm:top-6 lg:right-28 lg:top-8 xl:right-36">
         <Image
           src="/categories-rings.png"
           alt=""
           width={160}
           height={160}
-          className="absolute -left-2 -top-4 h-auto w-24 object-contain opacity-80 sm:-left-4 sm:w-28 lg:w-36"
+          className="absolute -left-6 -top-4 h-auto w-24 object-contain opacity-80 sm:-left-8 sm:w-28 lg:-left-10 lg:w-36"
           aria-hidden
         />
         <Image
