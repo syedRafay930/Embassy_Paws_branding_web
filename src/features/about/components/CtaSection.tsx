@@ -1,31 +1,62 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { Button } from "@/components/ui";
 import { ROUTES } from "@/constants";
 
-export function CtaSection() {
+type CtaSectionProps = {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  leftImageSrc?: string;
+  leftImageAlt?: string;
+  rightImageSrc?: string;
+  rightImageAlt?: string;
+  topLeftDecoration?: ReactNode;
+};
+
+export function CtaSection({
+  title = "Ready to plan your pet's journey?",
+  description = "Let's talk through routes, requirements, and timing.",
+  buttonText = "Get a Quote",
+  buttonHref = ROUTES.CONTACT,
+  leftImageSrc = "/ee667f470775750b30ee5b41c22eac55fb8d8367.jpg",
+  leftImageAlt = "A small white dog running through grass",
+  rightImageSrc = "/e0f95fa70d884792cc202e07d8e8d2c29a9e85de.jpg",
+  rightImageAlt = "A cat and dog cuddling together",
+  topLeftDecoration,
+}: CtaSectionProps) {
   return (
     <section className="overflow-x-hidden bg-[#f7f3ea] py-12 sm:py-16 lg:py-24">
-      <div className="relative mx-2 w-[calc(100%-1rem)] overflow-hidden rounded-[2rem] bg-[#112239] px-5 py-10 sm:mx-3 sm:w-[calc(100%-1.5rem)] sm:overflow-visible sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
+      <div
+        className={
+          topLeftDecoration
+            ? "relative mx-2 w-[calc(100%-1rem)] overflow-visible rounded-[2rem] bg-[#112239] px-5 py-10 sm:mx-3 sm:w-[calc(100%-1.5rem)] sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20"
+            : "relative mx-2 w-[calc(100%-1rem)] overflow-hidden rounded-[2rem] bg-[#112239] px-5 py-10 sm:mx-3 sm:w-[calc(100%-1.5rem)] sm:overflow-visible sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20"
+        }
+      >
+        {topLeftDecoration}
+
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-10">
           {/* Left — text & button */}
           <div className="relative z-10">
-              <h2 className="font-serif text-[1.7rem] font-bold leading-tight text-white sm:text-4xl lg:whitespace-nowrap lg:text-[2.75rem]">
-                Ready to plan your pet&apos;s journey?
-              </h2>
+            <h2 className="font-serif text-[1.7rem] font-bold leading-tight text-white sm:text-4xl lg:whitespace-nowrap lg:text-[2.75rem]">
+              {title}
+            </h2>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/75 sm:text-[15px]">
-              Let&apos;s talk through routes, requirements, and timing.
+              {description}
             </p>
 
             <div className="relative mt-8 inline-block sm:mt-10">
               <Button
-                href={ROUTES.CONTACT}
+                href={buttonHref}
                 variant="white"
                 rounded="xl"
                 sparkle
                 sparkleColor="gold"
                 className="px-6 py-3 font-serif text-[15px] font-semibold normal-case tracking-normal text-[#112239] sm:px-8"
               >
-                Get a Quote
+                {buttonText}
               </Button>
 
               <Image
@@ -50,12 +81,11 @@ export function CtaSection() {
               aria-hidden
             />
 
-            {/* Running dog — lower left; face sits under the badge */}
             <div className="absolute bottom-2 left-0 z-[5] w-[55%] overflow-hidden rounded-[1.5rem] shadow-xl sm:rounded-[2rem] lg:bottom-6 lg:left-4">
               <div className="relative aspect-[4/3] w-full sm:aspect-square">
                 <Image
-                  src="/ee667f470775750b30ee5b41c22eac55fb8d8367.jpg"
-                  alt="A small white dog running through grass"
+                  src={leftImageSrc}
+                  alt={leftImageAlt}
                   fill
                   className="object-cover object-[center_20%]"
                   sizes="(max-width: 1024px) 50vw, 300px"
@@ -63,12 +93,11 @@ export function CtaSection() {
               </div>
             </div>
 
-            {/* Cuddling pets — higher right, overlapping the dog */}
             <div className="absolute -top-4 right-0 z-10 w-[55%] overflow-hidden rounded-[1.5rem] shadow-2xl sm:-top-10 sm:-right-4 sm:rounded-[2rem] lg:-right-8 lg:-top-12">
               <div className="relative aspect-[4/3] w-full sm:aspect-square">
                 <Image
-                  src="/e0f95fa70d884792cc202e07d8e8d2c29a9e85de.jpg"
-                  alt="A cat and dog cuddling together"
+                  src={rightImageSrc}
+                  alt={rightImageAlt}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 50vw, 300px"
@@ -76,7 +105,6 @@ export function CtaSection() {
               </div>
             </div>
 
-            {/* Badge — covers the running dog's face at the overlap */}
             <Image
               src="/why-choose-badge.png"
               alt="Pet Friendly"
