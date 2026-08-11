@@ -56,7 +56,7 @@ export function WhyChooseUsSection() {
         </div>
 
         {/* Right — text & features */}
-        <div className="relative pb-32 lg:pb-20">
+        <div className="relative pb-32 lg:pb-24">
           <Image
             src="/why-choose-paws.png"
             alt=""
@@ -107,13 +107,13 @@ export function WhyChooseUsSection() {
         </div>
       </Container>
 
-      {/* Jumping dog — lower body covered by gold section below */}
+      {/* Jumping dog */}
       <Image
-        src="/why-choose-jumping-dog.png"
+        src="/why-choose-jumping-dog.svg"
         alt=""
-        width={320}
-        height={280}
-        className="pointer-events-none absolute bottom-0 right-0 z-[5] h-auto w-44 object-contain sm:w-56 lg:right-2 lg:w-64 xl:right-6 xl:w-72"
+        width={390}
+        height={505}
+        className="pointer-events-none absolute bottom-0 right-4 z-[5] h-auto w-40 object-contain sm:right-8 sm:w-48 lg:right-10 lg:w-56 xl:right-14 xl:w-64"
         aria-hidden
         priority
       />

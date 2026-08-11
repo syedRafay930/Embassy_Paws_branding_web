@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function OurStorySection() {
   return (
-    <section className="relative overflow-hidden bg-[#f7f3ea] py-20 sm:py-14 lg:py-16 lg:px-20">
+    <section className="relative overflow-hidden bg-[#f7f3ea] py-10 sm:py-14 lg:py-16 lg:px-20">
       <div className="mx-auto flex w-full max-w-[90rem] flex-col items-center gap-12 px-4 sm:px-6 lg:flex-row lg:items-center lg:gap-16 lg:px-8 xl:gap-20 xl:px-10">
         {/* Left — text */}
         <div className="relative w-full shrink-0 lg:w-[min(100%,26rem)] xl:w-[28rem]">

@@ -49,36 +49,36 @@ export const APP_FEATURES = [
   "Book taxi, boarding, and grooming in one place",
 ] as const;
 
-export const IMPACT_STATS = [
+export type ImpactStatTone = "gold" | "blue" | "peach" | "tan";
+
+export type ImpactStat = {
+  value: string;
+  label: string;
+  tone: ImpactStatTone;
+};
+
+export const IMPACT_STATS: ImpactStat[] = [
   {
     value: "360+",
     label: "Pet Journey",
     tone: "gold",
-    shape: "starburst",
-    offset: "mt-2",
   },
   {
     value: "35+",
     label: "Travel Specialists",
     tone: "blue",
-    shape: "scallop",
-    offset: "-mt-1",
   },
   {
     value: "10K+",
     label: "Happy Pet Parents",
     tone: "peach",
-    shape: "blob",
-    offset: "mt-3",
   },
   {
     value: "99+",
     label: "Global Places",
     tone: "tan",
-    shape: "softburst",
-    offset: "mt-0",
   },
-] as const;
+];
 
 export const FEATURE_GRID = [
   {
@@ -125,16 +125,19 @@ export const REVIEWS = [
     name: "Sarah Mitchell",
     quote:
       "Embassy Paws handled our move abroad with so much care. Our dog arrived calm and happy — we felt supported the whole way.",
+    image: "/464d183453956ce68067bb962233a9b44f864dea.svg",
   },
   {
     name: "James Carter",
     quote:
       "Boarding felt like a second home. Daily updates and photos made leaving our pup stress-free.",
+    image: "/51d00ea90b2aaf4c5995ea414107a97b2f8e59c2.svg",
   },
   {
     name: "Aisha Rahman",
     quote:
       "The pet taxi and document help saved us days of paperwork. Truly a one-stop journey partner.",
+    image: "/8d32cd648abdb3dd119f154cf706ab6a13297987.svg",
   },
 ] as const;
 

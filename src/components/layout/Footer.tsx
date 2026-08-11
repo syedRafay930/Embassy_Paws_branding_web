@@ -164,7 +164,7 @@ export function Footer() {
 
       <Container className="relative z-10 pt-8 sm:pt-10 lg:pt-12">
         {/* Gold contact pill */}
-        <div className="rounded-full bg-[#d4a84b] px-4 py-3 sm:px-6 sm:py-3.5 lg:px-8">
+        <div className="rounded-3xl bg-[#d4a84b] px-4 py-4 sm:rounded-full sm:px-6 sm:py-3.5 lg:px-8">
           <ul className="flex flex-col items-center gap-3 text-center sm:flex-row sm:flex-wrap sm:justify-between sm:gap-x-4 sm:gap-y-2 lg:flex-nowrap lg:justify-around">
             {CONTACT_ITEMS.map((item) => (
               <li key={item.label} className="min-w-0">

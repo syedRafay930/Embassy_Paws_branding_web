@@ -45,7 +45,7 @@ export function ServicesSection() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-navy">
               Sweetheart Care
             </p>
-            <h2 className="mt-2 font-serif text-2xl font-bold leading-tight text-white sm:whitespace-nowrap sm:text-3xl lg:text-4xl">
+            <h2 className="mt-2 font-serif text-2xl font-bold leading-tight text-white lg:whitespace-nowrap lg:text-4xl sm:text-3xl">
               Excellence In Every Service
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">

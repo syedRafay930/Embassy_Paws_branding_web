@@ -123,7 +123,7 @@ export function NewsletterPopup() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="newsletter-popup-title"
-        className="relative w-full max-w-2xl rounded-3xl bg-[#f4efeb] px-6 pb-8 pt-20 shadow-xl sm:px-10 sm:pb-10 sm:pt-24"
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-[#f4efeb] px-5 pb-8 pt-16 shadow-xl sm:px-10 sm:pb-10 sm:pt-24"
         onClick={(event) => event.stopPropagation()}
       >
         {/* Floating bird — overlaps top edge */}
@@ -132,7 +132,7 @@ export function NewsletterPopup() {
           alt=""
           width={220}
           height={165}
-          className="pointer-events-none absolute left-1/2 top-0 z-10 h-auto w-36 -translate-x-1/2 -translate-y-[55%] object-contain sm:w-44 lg:w-48"
+          className="pointer-events-none absolute left-1/2 top-0 z-10 h-auto w-28 -translate-x-1/2 -translate-y-[55%] object-contain sm:w-44 lg:w-48"
           priority
           aria-hidden
         />

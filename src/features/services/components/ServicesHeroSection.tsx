@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui";
 import { ROUTES } from "@/constants";
 
-export function AboutHeroSection() {
+export function ServicesHeroSection() {
   return (
     <section className="relative overflow-hidden bg-[#112239] pt-28 lg:pt-32">
       {/* Giant faint paw — top left watermark */}
@@ -25,19 +25,17 @@ export function AboutHeroSection() {
               <Link href={ROUTES.HOME} className="transition hover:text-white/80">
                 Home
               </Link>
-              /About Us
+              /Services
             </p>
 
-            <h1 className="mt-3 max-w-xl font-serif text-[2rem] font-bold leading-[1.15] text-white sm:text-5xl lg:text-[4rem]">
-              The Team Behind
-              <br />
-              Every Safe Journey
+            <h1 className="mt-3 font-serif text-[2rem] font-bold leading-[1.15] text-white sm:text-5xl lg:text-[4rem]">
+              <span className="block whitespace-nowrap">Everything Your Pet</span>
+              <span className="block whitespace-nowrap">Needs, Handled</span>
             </h1>
 
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70 sm:text-base lg:mt-5">
-              We&apos;re pet parents, vets, and travel specialists who believe
-              every animal deserves a calm, well-cared-for trip — wherever the
-              destination.
+              From paperwork to touchdown, every part of the journey is managed
+              by people who love pets as much as you do.
             </p>
 
             {/* Small gold paw accent */}
@@ -54,8 +52,8 @@ export function AboutHeroSection() {
           {/* Right — hero image flush to section bottom, enlarged + nudged */}
           <div className="relative mx-auto w-full max-w-md self-end sm:max-w-lg sm:translate-x-4 lg:mx-0 lg:max-w-none lg:w-[130%] lg:translate-x-6 xl:w-[135%] xl:translate-x-10">
             <Image
-              src="/77a8621e53d2cda93dac1905e6162abfe105fd41.png"
-              alt="Two children hugging a Golden Retriever"
+              src="/205ffba4d93c2d1097f831be8576dc3871db9a96.png"
+              alt="Woman holding a white cat"
               width={1100}
               height={850}
               className="h-auto w-full object-contain object-bottom mix-blend-lighten lg:scale-125"

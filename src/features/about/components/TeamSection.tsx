@@ -5,32 +5,32 @@ const TEAM = [
   {
     name: "Maria Alvarez",
     role: "Founder & Lead Coordinator",
-    image: "/464d183453956ce68067bb962233a9b44f864dea.png",
+    image: "/464d183453956ce68067bb962233a9b44f864dea.svg",
     shape: "blue" as const,
   },
   {
     name: "Dr. James Okoro",
     role: "Veterinary Compliance",
-    image: "/de8767104cb470b9d28410e6e36e13f62510e93d.png",
+    image: "/de8767104cb470b9d28410e6e36e13f62510e93d.svg",
     shape: "coral" as const,
   },
   {
     name: "Priya Nandan",
     role: "Airline & Crate Specialist",
-    image: "/8d32cd648abdb3dd119f154cf706ab6a13297987.png",
+    image: "/8d32cd648abdb3dd119f154cf706ab6a13297987.svg",
     shape: "teal" as const,
   },
   {
     name: "Priya Nandan",
     role: "Airline & Crate Specialist",
-    image: "/51d00ea90b2aaf4c5995ea414107a97b2f8e59c2.png",
+    image: "/51d00ea90b2aaf4c5995ea414107a97b2f8e59c2.svg",
     shape: "pink" as const,
   },
 ] as const;
 
 export function TeamSection() {
   return (
-    <section className="relative overflow-hidden bg-[#f7f3ea] py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-[#f7f3ea] pb-4 pt-16 lg:pb-6 lg:pt-24">
       {/* ================= FLOATING DECORATIONS ================= */}
       
       {/* Top left — rings + cartoon cat */}
@@ -104,7 +104,7 @@ export function TeamSection() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#d4a84b]">
             Meet The Team
           </p>
-          <h2 className="mt-3 font-serif text-3xl font-bold leading-tight text-[#112239] sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="mt-3 font-serif text-2xl font-bold leading-tight text-[#112239] sm:text-4xl lg:text-[2.75rem]">
             Pet Lovers, Vets &amp; Travel Specialists
           </h2>
         </div>
@@ -137,7 +137,7 @@ export function TeamSection() {
         </ul>
 
         {/* Bottom slider / ribbon indicator (Built with pure CSS!) */}
-        <div className="mt-12 flex h-8 items-center justify-center gap-1.5 lg:mt-16">
+        <div className="mt-8 flex h-8 items-center justify-center gap-1.5 lg:mt-10">
           <div className="h-1 w-16 rounded-full bg-[#d4a84b]"></div>
           <div className="h-1 w-1.5 rounded-full bg-[#d4a84b]/40"></div>
           <div className="h-1 w-1.5 rounded-full bg-[#d4a84b]/40"></div>

@@ -83,7 +83,7 @@ export function CategoriesSection() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
             Why Choose Us
           </p>
-          <h2 className="mt-2 font-serif text-3xl font-bold leading-tight whitespace-nowrap text-navy sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="mt-2 font-serif text-[1.75rem] font-bold leading-tight text-navy sm:whitespace-nowrap sm:text-4xl lg:text-[2.75rem]">
             Different Pets, Different Paths
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-navy/75 sm:text-[15px]">

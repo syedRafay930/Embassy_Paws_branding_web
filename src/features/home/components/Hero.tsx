@@ -48,7 +48,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 max-w-3xl text-sm leading-relaxed text-white/85 sm:text-base">
-            <span className="block sm:whitespace-nowrap">
+            <span className="block lg:whitespace-nowrap">
               Safe, comfortable, and stress-free travel solutions designed for
               you and your furry
             </span>

@@ -56,9 +56,9 @@ export function ValuesSection() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#112239]/80">
             What We Stand For
           </p>
-          <h2 className="mt-2 font-serif text-3xl font-bold leading-tight text-[#112239] sm:text-4xl">
-            The Values Behind Every Journey
-          </h2>
+            <h2 className="mt-2 font-serif text-2xl font-bold leading-tight text-[#112239] sm:text-4xl">
+              The Values Behind Every Journey
+            </h2>
         </div>
 
         {/* Cards */}
