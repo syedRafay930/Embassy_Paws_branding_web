@@ -120,23 +120,27 @@ export function NewsletterPopup() {
       role="presentation"
     >
       <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="newsletter-popup-title"
-        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-[#f4efeb] px-5 pb-8 pt-16 shadow-xl sm:px-10 sm:pb-10 sm:pt-24"
+        className="relative mt-10 w-full max-w-2xl sm:mt-14"
         onClick={(event) => event.stopPropagation()}
       >
-        {/* Floating bird — overlaps top edge */}
+        {/* Outside the card so overflow doesn't clip it */}
         <Image
-          src="/bird-letter.png"
+          src="/bird-letter.svg"
           alt=""
           width={220}
           height={165}
-          className="pointer-events-none absolute left-1/2 top-0 z-10 h-auto w-28 -translate-x-1/2 -translate-y-[55%] object-contain sm:w-44 lg:w-48"
+          className="pointer-events-none absolute left-1/2 top-0 z-20 h-auto w-28 -translate-x-1/2 -translate-y-1/2 object-contain sm:w-44 lg:w-48"
           priority
+          unoptimized
           aria-hidden
         />
 
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="newsletter-popup-title"
+          className="relative max-h-[90vh] overflow-y-auto rounded-3xl bg-[#f4efeb] px-5 pb-8 pt-16 shadow-xl sm:px-10 sm:pb-10 sm:pt-24"
+        >
         {/* Close */}
         <button
           type="button"
@@ -220,6 +224,7 @@ export function NewsletterPopup() {
             </span>
           </label>
         </form>
+        </div>
       </div>
     </div>
   );
