@@ -4,7 +4,7 @@ export const ROUTES = {
   DESTINATIONS: "/#features",
   HOW_IT_WORKS: "/how-it-works",
   ABOUT: "/about",
-  BLOGS: "/#categories",
+  BLOGS: "/blogs",
   BOARDING: "/#boarding",
   RELOCATION: "/#relocation",
   TAXI: "/#taxi",
