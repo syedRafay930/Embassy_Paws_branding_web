@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ROUTES } from "@/constants";
 
 // Custom SVG Bone Icon Component
 function BoneIcon({ className }: { className?: string }) {
@@ -51,7 +52,7 @@ export function DestinationCta() {
             
             <div className="relative mt-8 inline-block">
               <Link 
-                href="/contact" 
+                href={ROUTES.CONTACT} 
                 className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-bold text-navy transition hover:bg-cream sm:text-base"
               >
                 Ask about your route
