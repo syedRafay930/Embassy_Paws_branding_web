@@ -73,6 +73,7 @@ export function DestinationCta() {
               alt="Happy jumping dog"
               fill
               className="object-contain object-bottom lg:object-right-bottom"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
 
