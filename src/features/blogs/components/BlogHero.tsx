@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui";
+import { FadeIn } from "@/components/ui/animations/FadeIn";
 
 function PawIcon({ className }: { className?: string }) {
   return (
@@ -16,47 +19,58 @@ function PawIcon({ className }: { className?: string }) {
 
 export function BlogHero() {
   return (
-    <section className="relative flex w-full flex-col overflow-hidden rounded-b-[2rem] bg-gold pt-24 sm:rounded-b-[2.5rem] lg:block lg:pt-32">
-      
+    <section className="relative grid w-full grid-cols-1 items-end overflow-hidden rounded-b-[2rem] bg-gold pt-24 sm:rounded-b-[2.5rem] lg:block lg:pt-32">
+
       {/* 1. Top Black Gradient Overlay */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/70 via-black/5 to-transparent" />
 
       {/* 2. Decorative Watermark Paws */}
       {/* Top Left Giant Paw */}
-      <PawIcon className="absolute -left-12 -top-10 z-0 h-64 w-64 -rotate-12 text-black/10 sm:h-80 sm:w-80 lg:-left-16 lg:-top-16 lg:h-[28rem] lg:w-[28rem]" />
-      
+      <FadeIn direction="right" delay={0.1} className="absolute -left-12 -top-10 z-0 h-64 w-64 -rotate-12 text-black/10 sm:h-80 sm:w-80 lg:-left-16 lg:-top-16 lg:h-[28rem] lg:w-[28rem]">
+        <PawIcon className="h-full w-full" />
+      </FadeIn>
+
       {/* Center Small Paw (Hidden on mobile and tablet via 'hidden lg:block') */}
-      <PawIcon className="absolute bottom-24 left-[42%] z-0 hidden h-10 w-10 text-black/25 lg:block" />
+      {/* <PawIcon className="absolute bottom-24 left-[42%] z-0 hidden h-10 w-10 text-black/25 lg:block" /> */}
 
       {/* 3. Main Content Container */}
       {/* shrink-0 lagaya hai taake flexbox ki wajah se text container compress na ho */}
-      <Container className="relative z-20 shrink-0">
-        <div className="max-w-xl pb-4 pt-4 sm:pb-8 sm:pt-10 lg:pb-36 lg:pt-16">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">
-            <Link href="/" className="transition hover:text-white">
-              Home
-            </Link>
-            /Blogs
-          </p>
+      <Container className="relative z-20 col-start-1 row-start-1 shrink-0">
+        <div className="max-w-xl pb-12 pt-4 sm:pb-16 sm:pt-10 lg:pb-36 lg:pt-16">
+          <FadeIn direction="up" delay={0.2}>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80">
+              <Link href="/" className="transition hover:text-white">
+                Home
+              </Link>
+              /Blogs
+            </p>
+          </FadeIn>
 
-          <h1 className="mt-4 font-serif text-[2.5rem] font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[4rem]">
-            Guides, Stories &
-            <br />
-            Travel Tips
-          </h1>
+          <FadeIn direction="up" delay={0.3}>
+            <h1 className="mt-4 font-serif text-[2.5rem] font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[4rem]">
+              Guides, Stories &
+              <br />
+              Travel Tips
+            </h1>
+          </FadeIn>
 
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-white/90 sm:text-base lg:mt-6">
-            Everything we&apos;ve learned relocating 14,200+ pets, so you
-            don&apos;t have to learn it the hard way.
-          </p>
+          <FadeIn direction="up" delay={0.4}>
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-white/90 sm:text-base lg:mt-6">
+              Everything we&apos;ve learned relocating 14,200+ pets, so you
+              don&apos;t have to learn it the hard way.
+            </p>
+          </FadeIn>
         </div>
       </Container>
 
       {/* 4. Right Edge Image (Bulletproof Mobile & Tab Alignment) */}
       {/* mt-auto aur ml-auto ensure karta hai ke image strictly bottom right par attach rahay */}
-      <div className="relative z-10 mt-auto ml-auto w-[85%] max-w-[420px] sm:w-[70%] sm:max-w-[500px] lg:absolute lg:bottom-0 lg:right-0 lg:w-[55%] lg:max-w-[1000px]">
+      <FadeIn direction="left" delay={0.3} className="relative z-10 col-start-1 row-start-1 mt-auto w-[95%] max-w-[480px] self-end justify-self-end opacity-30 blur-[2px] sm:w-[80%] sm:max-w-[560px] lg:absolute lg:bottom-0 lg:right-0 lg:w-[55%] lg:max-w-[1000px] lg:opacity-100 lg:blur-none">
+        {/* Mobile Specific Overlay taake text parhne mein koi mushkil na ho */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-t from-gold via-gold/70 to-transparent lg:hidden" />
+
         <Image
-          src="/blog/blog-paw-bg.png" 
+          src="/blog/blog-paw-bg.png"
           alt="Person reading a pet travel magazine"
           width={1200}
           height={900}
@@ -64,8 +78,8 @@ export function BlogHero() {
           sizes="(max-width: 1024px) 100vw, 55vw"
           priority
         />
-      </div>
-      
+      </FadeIn>
+
     </section>
   );
 }

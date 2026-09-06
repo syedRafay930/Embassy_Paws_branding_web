@@ -5,3 +5,6 @@ export { Input } from "./Input";
 export { Textarea } from "./Textarea";
 export { ImagePlaceholder } from "./ImagePlaceholder";
 export { NewsletterPopup } from "./NewsletterPopup";
+export { Select } from "./Select";
+export { PhoneInput } from "./PhoneInput";
+export { DatePicker } from "./DatePicker";

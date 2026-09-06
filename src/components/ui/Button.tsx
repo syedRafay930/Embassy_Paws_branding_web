@@ -87,7 +87,7 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const classes = cn(
-    "relative inline-flex items-center justify-center font-semibold uppercase transition-colors duration-200 disabled:opacity-50",
+    "relative inline-flex items-center justify-center font-semibold uppercase transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-[1.02] hover:-translate-y-0.5 hover:shadow-md disabled:opacity-50 disabled:pointer-events-none",
     roundedClasses[rounded],
     variantClasses[variant],
     sizeClasses[size],

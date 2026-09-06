@@ -1,13 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui";
 import { ROUTES } from "@/constants";
+import { useAppDispatch } from "@/store";
+import { setQuoteModalOpen } from "@/store/slices/uiSlice";
+import { FadeIn } from "@/components/ui/animations/FadeIn";
 
 type CtaSectionProps = {
   title?: string;
   description?: string;
   buttonText?: string;
-  buttonHref?: string;
+  buttonHref?: string; // Yeh prop ab zaroori nahi raha kyu ke modal khul raha hai, lekin purani compatibility ke liye rakha hai
   leftImageSrc?: string;
   leftImageAlt?: string;
   rightImageSrc?: string;
@@ -19,13 +24,15 @@ export function CtaSection({
   title = "Ready to plan your pet's journey?",
   description = "Let's talk through routes, requirements, and timing.",
   buttonText = "Get a Quote",
-  buttonHref = ROUTES.CONTACT,
+  // buttonHref = ROUTES.CONTACT,
   leftImageSrc = "/ee667f470775750b30ee5b41c22eac55fb8d8367.jpg",
   leftImageAlt = "A small white dog running through grass",
   rightImageSrc = "/e0f95fa70d884792cc202e07d8e8d2c29a9e85de.jpg",
   rightImageAlt = "A cat and dog cuddling together",
   topLeftDecoration,
 }: CtaSectionProps) {
+  const dispatch = useAppDispatch(); // Modal open karne ke liye dispatch hook
+
   return (
     <section className="overflow-x-hidden bg-[#f7f3ea] py-12 sm:py-16 lg:py-24">
       <div
@@ -39,7 +46,7 @@ export function CtaSection({
 
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-10">
           {/* Left — text & button */}
-          <div className="relative z-10">
+          <FadeIn direction="right" className="relative z-10">
             <h2 className="font-serif text-[1.7rem] font-bold leading-tight text-white sm:text-4xl lg:whitespace-nowrap lg:text-[2.75rem]">
               {title}
             </h2>
@@ -49,12 +56,12 @@ export function CtaSection({
 
             <div className="relative mt-8 inline-block sm:mt-10">
               <Button
-                href={buttonHref}
+                onClick={() => dispatch(setQuoteModalOpen(true))} // Href hata kar modal ka dispatch laga diya
                 variant="white"
                 rounded="xl"
                 sparkle
                 sparkleColor="gold"
-                className="px-6 py-3 font-serif text-[15px] font-semibold normal-case tracking-normal text-[#112239] sm:px-8"
+                className="px-6 py-3 font-serif text-[15px] font-semibold normal-case tracking-normal text-[#112239] sm:px-8 cursor-pointer"
               >
                 {buttonText}
               </Button>
@@ -68,10 +75,10 @@ export function CtaSection({
                 aria-hidden
               />
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right — overlapping photos */}
-          <div className="relative mt-4 h-[240px] w-full sm:mt-8 sm:h-[380px] lg:mt-0 lg:h-[400px]">
+          <FadeIn direction="left" delay={0.2} className="relative mt-4 h-[240px] w-full sm:mt-8 sm:h-[380px] lg:mt-0 lg:h-[400px]">
             <Image
               src="/why-choose-stripes.png"
               alt=""
@@ -112,7 +119,7 @@ export function CtaSection({
               height={120}
               className="absolute left-[61%] top-[46%] z-20 h-20 w-20 -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-xl sm:h-28 sm:w-28 lg:left-[50%] lg:top-[48%] lg:h-32 lg:w-32"
             />
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>

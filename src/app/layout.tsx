@@ -3,6 +3,8 @@ import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import { NewsletterPopup } from "@/components/ui";
 import { StoreProvider } from "@/store/provider";
 import "./globals.css";
+import { QuoteModal } from "@/features/quote";
+import { ContactModal } from "@/features/contact/components/ContactModal";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -36,6 +38,8 @@ export default function RootLayout({
         <StoreProvider>
           {children}
           <NewsletterPopup />
+          <QuoteModal />
+          <ContactModal />
         </StoreProvider>
       </body>
     </html>
