@@ -1,24 +1,30 @@
+"use client";
+
 import Image from "next/image";
 import { Button, Container } from "@/components/ui";
 import { ROUTES } from "@/constants";
 import { SERVICES } from "../data";
+import { FadeIn } from "@/components/ui/animations/FadeIn";
+import { StaggerContainer, StaggerItem } from "@/components/ui/animations/Stagger";
 
 export function ServicesSection() {
   return (
     <section id="services" className="bg-gold py-10 lg:py-14">
       <Container>
-        {/* Header — text stays centered; dog/bone push to outer edges */}
+        {/* Header */}
         <div className="relative text-center">
-          <Image
-            src="/services-header-dog.png"
-            alt=""
-            width={200}
-            height={170}
-            className="pointer-events-none absolute left-0 top-1/2 z-10 hidden h-auto w-28 -translate-y-1/2 object-contain sm:block sm:w-36 lg:left-2 lg:w-44 xl:left-4"
-            aria-hidden
-          />
+          <FadeIn direction="right" delay={0.2} className="pointer-events-none absolute left-0 top-1/2 z-10 hidden h-auto w-28 -translate-y-1/2 object-contain sm:block sm:w-36 lg:left-2 lg:w-44 xl:left-4">
+            <Image
+              src="/services-header-dog.png"
+              alt=""
+              width={200}
+              height={170}
+              className="h-full w-full object-contain"
+              aria-hidden
+            />
+          </FadeIn>
 
-          <div className="pointer-events-none absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 sm:block lg:right-2 xl:right-4">
+          <FadeIn direction="left" delay={0.2} className="pointer-events-none absolute right-0 top-1/2 z-10 hidden -translate-y-1/2 sm:block lg:right-2 xl:right-4">
             <Image
               src="/services-header-bone.png"
               alt=""
@@ -39,9 +45,9 @@ export function ServicesSection() {
             >
               ✦
             </span>
-          </div>
+          </FadeIn>
 
-          <div className="mx-auto max-w-4xl px-4 sm:px-32 lg:px-40">
+          <FadeIn direction="up" className="mx-auto max-w-4xl px-4 sm:px-32 lg:px-40">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-navy">
               Sweetheart Care
             </p>
@@ -54,62 +60,63 @@ export function ServicesSection() {
               <br />
               so every journey feels safe, simple, and full of love.
             </p>
-          </div>
+          </FadeIn>
         </div>
 
         {/* Cards */}
-        <div className="mt-8 grid gap-5 lg:grid-cols-3 lg:gap-6">
+        <StaggerContainer delayChildren={0.3} className="mt-8 grid gap-5 lg:grid-cols-3 lg:gap-6">
           {SERVICES.map((service) => (
-            <article
-              key={service.id}
-              id={service.id === "relocation" ? "relocation" : undefined}
-              className="rounded-[1.75rem] bg-white p-3 shadow-sm sm:p-4"
-            >
-              <div className="relative aspect-[16/11] overflow-hidden rounded-2xl">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 360px"
-                />
-              </div>
+            <StaggerItem key={service.id}>
+              <article
+                id={service.id === "relocation" ? "relocation" : undefined}
+                className="h-full rounded-[1.75rem] bg-white p-3 shadow-sm sm:p-4"
+              >
+                <div className="relative aspect-[16/11] overflow-hidden rounded-2xl">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition duration-500 hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 360px"
+                  />
+                </div>
 
-              <div className="px-1 pt-4 pb-1">
-                <h3 className="font-serif text-lg font-bold text-gold sm:text-xl">
-                  {service.title}
-                </h3>
-                <p className="mt-1 text-base font-bold text-navy">{service.price}</p>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
-                  {service.description}
-                </p>
-                <Button
-                  href={`#${service.anchor}`}
-                  variant="navy"
-                  size="sm"
-                  rounded="xl"
-                  className="mt-4 normal-case tracking-normal"
-                >
-                  Read More
-                </Button>
-              </div>
-            </article>
+                <div className="px-1 pt-4 pb-1">
+                  <h3 className="font-serif text-lg font-bold text-gold sm:text-xl">
+                    {service.title}
+                  </h3>
+                  <p className="mt-1 text-base font-bold text-navy">{service.price}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                    {service.description}
+                  </p>
+                  <Button
+                    href={`#${service.anchor}`}
+                    variant="navy"
+                    size="sm"
+                    rounded="xl"
+                    className="mt-4 normal-case tracking-normal"
+                  >
+                    Read More
+                  </Button>
+                </div>
+              </article>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Footer CTA */}
-        <div className="mt-8 flex justify-center">
+        <FadeIn direction="up" delay={0.6} className="mt-8 flex justify-center">
           <Button
             href={ROUTES.SERVICES}
             variant="white"
             rounded="xl"
             sparkle
             sparkleColor="white"
-            className="bg-white text-navy normal-case tracking-normal font-serif hover:bg-cream"
+            className="bg-white font-serif normal-case tracking-normal text-navy hover:bg-cream"
           >
             View All Services
           </Button>
-        </div>
+        </FadeIn>
       </Container>
     </section>
   );

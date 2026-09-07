@@ -7,4 +7,6 @@ export {
   toggleMobileNav,
   setOpenFaqIndex,
   toggleFaqIndex,
+  setQuoteModalOpen,
+  toggleQuoteModal,
 } from "./slices/uiSlice";

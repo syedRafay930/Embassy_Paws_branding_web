@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui";
 import { BlogContentBlock } from "../data";
+import { FadeIn } from "@/components/ui/animations/FadeIn";
 
 type ContentProps = {
   image: string;
@@ -15,18 +18,20 @@ export function BlogDetailContent({ image, title, content, nextBlogId }: Content
     <section className="relative overflow-hidden bg-[#FAFAFA] pb-24 pt-10 sm:pt-16 ">
       
       {/* Background Decorative Circle - Hidden on mobile via hidden sm:block */}
-      <Image
-        src="/blog/bg-line-circle.png"
-        alt=""
-        width={300}
-        height={300}
-        className="pointer-events-none absolute bottom-40 -left-20 z-0 hidden opacity-60 sm:block lg:w-[400px]"
-      />
+      <FadeIn direction="right" delay={0.1} className="pointer-events-none absolute bottom-40 -left-20 z-0 hidden opacity-60 sm:block lg:w-[400px]">
+        <Image
+          src="/blog/bg-line-circle.png"
+          alt=""
+          width={300}
+          height={300}
+          className="h-full w-full object-contain"
+        />
+      </FadeIn>
 
       <Container className="relative z-10 mx-auto max-w-3xl">
         
         {/* Featured Image - Separated from the hero section */}
-        <div className="relative mx-auto mb-10 aspect-[16/9] w-[90%] max-w-2xl overflow-hidden rounded-[1.5rem] shadow-xl sm:mb-14">
+        <FadeIn direction="up" delay={0.2} className="relative mx-auto mb-10 aspect-[16/9] w-[90%] max-w-2xl overflow-hidden rounded-[1.5rem] shadow-xl sm:mb-14">
           <Image
             src={image}
             alt={title}
@@ -34,10 +39,10 @@ export function BlogDetailContent({ image, title, content, nextBlogId }: Content
             className="object-cover"
             priority
           />
-        </div>
+        </FadeIn>
 
         {/* Dynamic Content Rendering */}
-        <div className="space-y-6 text-[#2D3643]">
+        <FadeIn direction="up" delay={0.3} className="space-y-6 text-[#2D3643]">
           {content.map((block, index) => {
             if (block.type === 'heading') {
               return (
@@ -60,10 +65,10 @@ export function BlogDetailContent({ image, title, content, nextBlogId }: Content
               </p>
             );
           })}
-        </div>
+        </FadeIn>
 
         {/* Navigation Buttons */}
-        <div className="mt-16 flex items-center justify-center gap-4 border-t border-black/10 pt-10">
+        <FadeIn direction="up" delay={0.4} className="mt-16 flex items-center justify-center gap-4 border-t border-black/10 pt-10">
           <Link
             href="/blogs"
             className="rounded-full border border-navy px-6 py-2.5 text-sm font-semibold text-navy transition hover:bg-navy/5"
@@ -79,7 +84,7 @@ export function BlogDetailContent({ image, title, content, nextBlogId }: Content
               Next Blog <span aria-hidden>→</span>
             </Link>
           )}
-        </div>
+        </FadeIn>
 
       </Container>
     </section>

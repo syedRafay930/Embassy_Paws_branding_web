@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Container } from "@/components/ui";
+import { FadeIn } from "@/components/ui/animations/FadeIn";
 
 function PawIcon({ className }: { className?: string }) {
   return (
@@ -27,30 +30,41 @@ export function BlogDetailHero({ title, category, date, readTime, author }: Hero
       <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/70 via-black/5 to-transparent" />
 
       {/* Decorative Watermark Paws */}
-      <PawIcon className="absolute -left-12 -top-10 z-0 h-64 w-64 -rotate-12 text-black/10 sm:h-80 sm:w-80 lg:-left-16 lg:-top-16 lg:h-[28rem] lg:w-[28rem]" />
-      <PawIcon className="absolute bottom-12 right-[15%] z-0 h-16 w-16 text-black/25 sm:bottom-16 lg:right-[20%] lg:h-20 lg:w-20" />
+      <FadeIn direction="right" delay={0.1} className="absolute -left-12 -top-10 z-0 h-64 w-64 -rotate-12 text-black/10 sm:h-80 sm:w-80 lg:-left-16 lg:-top-16 lg:h-[28rem] lg:w-[28rem]">
+        <PawIcon className="h-full w-full" />
+      </FadeIn>
+      
+      <FadeIn direction="left" delay={0.2} className="absolute bottom-12 right-[15%] z-0 h-16 w-16 text-black/25 sm:bottom-16 lg:right-[20%] lg:h-20 lg:w-20">
+        <PawIcon className="h-full w-full" />
+      </FadeIn>
 
       <Container className="relative z-20 flex flex-col items-center text-center">
         {/* Bottom padding thori barha di hai taake image overlap karne par text hide na ho */}
         <div className="max-w-4xl pb-20 pt-4 sm:pb-24 sm:pt-8 lg:pb-32 lg:pt-10">
           
-          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/80 sm:text-[11px] lg:tracking-[0.2em]">
-            <Link href="/" className="transition hover:text-white">Home</Link>
-            {" / "}
-            <Link href="/blogs" className="transition hover:text-white">Blogs</Link>
-            {" / "}
-            <span className="line-clamp-1 sm:inline">{title}</span>
-          </p>
+          <FadeIn direction="up" delay={0.2}>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/80 sm:text-[11px] lg:tracking-[0.2em]">
+              <Link href="/" className="transition hover:text-white">Home</Link>
+              {" / "}
+              <Link href="/blogs" className="transition hover:text-white">Blogs</Link>
+              {" / "}
+              <span className="line-clamp-1 sm:inline">{title}</span>
+            </p>
+          </FadeIn>
 
-          <h1 className="mt-6 font-serif text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
-            {title}
-          </h1>
+          <FadeIn direction="up" delay={0.3}>
+            <h1 className="mt-6 font-serif text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+              {title}
+            </h1>
+          </FadeIn>
 
-          <p className="mt-6 text-xs font-medium text-white/90 sm:text-sm">
-            {category} <br className="sm:hidden" />
-            <span className="hidden sm:inline"> • </span>
-            {date} • {readTime} • By {author}
-          </p>
+          <FadeIn direction="up" delay={0.4}>
+            <p className="mt-6 text-xs font-medium text-white/90 sm:text-sm">
+              {category} <br className="sm:hidden" />
+              <span className="hidden sm:inline"> • </span>
+              {date} • {readTime} • By {author}
+            </p>
+          </FadeIn>
 
         </div>
       </Container>
