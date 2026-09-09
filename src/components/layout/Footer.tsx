@@ -5,23 +5,24 @@ import { ROUTES } from "@/constants";
 
 const CONTACT_ITEMS = [
   {
-    label: "No: 58 A. East Madison Street, Baltimore, MD, USA 4508",
-    href: "https://maps.google.com/?q=58+East+Madison+Street+Baltimore+MD",
+    label: "Babylon, NY",
+    href: "https://maps.app.goo.gl/K22wiuM9awwtM4Ht9",
+    // href: "https://maps.google.com/?q=58+East+Madison+Street+Baltimore+MD",
     icon: "home" as const,
   },
   {
-    label: "+000 - 123456789",
-    href: "tel:+000123456789",
+    label: "+1 (843) 232-6303",
+    href: "tel:+18432326303",
     icon: "phone" as const,
   },
   {
-    label: "info@example.com",
-    href: "mailto:info@example.com",
+    label: "info@embassypaws.com",
+    href: "mailto:info@embassypaws.com",
     icon: "mail" as const,
   },
   {
-    label: "www.example.com",
-    href: "https://www.example.com",
+    label: "www.embassypaws.com",
+    href: "https://www.embassypaws.com",
     icon: "globe" as const,
   },
 ] as const;
