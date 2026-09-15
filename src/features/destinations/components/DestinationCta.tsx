@@ -69,7 +69,8 @@ export function DestinationCta() {
               src="/destinations/jumping-dog.png" 
               alt="Happy jumping dog"
               fill
-              className="object-contain object-bottom lg:object-right-bottom"
+              // Yahan Maine 'object-bottom lg:object-right-bottom' ko change kar ke sirf 'object-right-bottom' kar diya hai
+              className="object-contain object-right-bottom"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </FadeIn>
