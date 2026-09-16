@@ -19,7 +19,7 @@ export function HomeView() {
       <Header />
       <main className="overflow-x-hidden">
         <Hero />
-        <AssessmentSection />
+        {/* <AssessmentSection /> */}
         <KnowUsSection />
         <ServicesSection />
         <WhyChooseUsSection />

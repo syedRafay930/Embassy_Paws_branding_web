@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { MOBILE_APP_POINTS } from "../data";
 
@@ -5,13 +7,13 @@ export function HowItWorksStep2() {
   return (
     <section className="overflow-x-hidden bg-[#f7f3ea] py-12 sm:py-16 lg:py-24">
       <div className="relative mx-2 w-[calc(100%-1rem)] overflow-visible rounded-[2rem] bg-[#d4a84b] px-5 py-14 sm:mx-3 sm:w-[calc(100%-1.5rem)] sm:px-10 sm:py-16 lg:px-16 lg:py-20 xl:px-20">
-          {/* Peeking dog — bottom right */}
+          {/* Peeking dog — bottom right (Mobile par hidden, sm aur us se upar visible) */}
           <Image
             src="/know-us-cartoon-dog.png"
             alt=""
             width={220}
             height={140}
-            className="pointer-events-none absolute -bottom-3 -right-17 z-20 h-auto w-28 object-contain sm:-bottom-4 sm:-right-6 sm:w-36 lg:-bottom-16 lg:-right-4 lg:w-48"
+            className="hidden sm:block pointer-events-none absolute -bottom-3 -right-17 z-20 h-auto w-28 object-contain sm:-bottom-4 sm:-right-6 sm:w-36 lg:-bottom-16 lg:-right-4 lg:w-48"
             aria-hidden
           />
 

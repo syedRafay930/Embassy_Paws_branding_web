@@ -8,7 +8,8 @@ import { StaggerContainer, StaggerItem } from "@/components/ui/animations/Stagge
 
 export function HowItWorksStep1() {
   return (
-    <section className="overflow-x-hidden bg-[#f7f3ea] py-16 lg:overflow-visible lg:py-24">
+    // Yeh strict overflow-hidden aur max-w-[100vw] ensure karega ke mobile par horizontal scroll bilkul na aaye
+    <section className="relative w-full max-w-[100vw] overflow-hidden bg-[#f7f3ea] py-16 lg:py-24">
       <Container>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-12 xl:gap-20">
           

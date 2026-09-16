@@ -36,8 +36,8 @@ export function ValuesSection() {
     <section className="bg-[#f7f3ea] py-10 sm:py-12 lg:py-16">
       <div className="relative mx-2 overflow-visible rounded-[2rem] bg-[#d1a961] px-5 py-14 sm:mx-4 sm:rounded-[2.5rem] sm:px-8 sm:py-16 md:mx-6 lg:mx-8 lg:px-12 lg:py-20 xl:mx-10">
         
-        {/* Cartoon dog — top left, hanging off edge */}
-        <FadeIn direction="right" delay={0.2} className="pointer-events-none absolute -left-4 -top-8 z-20 h-auto w-24 sm:-left-6 sm:-top-10 sm:w-28 lg:-left-8 lg:-top-12 lg:w-36">
+        {/* Cartoon dog — top left (Mobile par hidden, sm aur us se upar visible) */}
+        <FadeIn direction="right" delay={0.2} className="hidden sm:block pointer-events-none absolute -left-4 -top-8 z-20 h-auto w-24 sm:-left-6 sm:-top-10 sm:w-28 lg:-left-8 lg:-top-12 lg:w-36">
           <Image
             src="/know-us-cartoon-dog.png"
             alt=""
@@ -48,8 +48,8 @@ export function ValuesSection() {
           />
         </FadeIn>
 
-        {/* Bone — bottom right, faint */}
-        <FadeIn direction="left" delay={0.3} className="pointer-events-none absolute -bottom-6 -right-4 z-0 h-auto w-28 sm:-bottom-8 sm:-right-6 sm:w-36 lg:-bottom-10 lg:-right-8 lg:w-44">
+        {/* Bone — bottom right (Mobile par hidden, sm aur us se upar visible) */}
+        <FadeIn direction="left" delay={0.3} className="hidden sm:block pointer-events-none absolute -bottom-6 -right-4 z-0 h-auto w-28 sm:-bottom-8 sm:-right-6 sm:w-36 lg:-bottom-10 lg:-right-8 lg:w-44">
           <Image
             src="/services-header-bone.png"
             alt=""

@@ -15,8 +15,8 @@ export function DevicePortalSection() {
   return (
     <section className="relative z-20 -mt-10 bg-[#c29b47] py-14 sm:-mt-12 lg:-mt-16 lg:py-20">
       
-      {/* Bones — top-left */}
-      <FadeIn direction="down" delay={0.2} className="pointer-events-none absolute left-4 top-4 z-10 h-auto w-24 sm:left-8 sm:top-6 sm:w-28 lg:left-12 lg:w-36">
+      {/* Bones — top-left (Mobile par hidden, sm screens aur us se upar visible) */}
+      <FadeIn direction="down" delay={0.2} className="hidden sm:block pointer-events-none absolute left-4 top-4 z-10 h-auto w-24 sm:left-8 sm:top-6 sm:w-28 lg:left-12 lg:w-36">
         <Image
           src="/device-portal-bones.png"
           alt=""
@@ -57,7 +57,8 @@ export function DevicePortalSection() {
               ))}
             </StaggerContainer>
 
-            <FadeIn direction="up" delay={0.6} className="mt-10 flex justify-end">
+            {/* Paws — (Mobile par hidden, sm screens par flex ban jayega) */}
+            <FadeIn direction="up" delay={0.6} className="hidden sm:flex mt-10 justify-end">
               <Image
                 src="/device-portal-paws.png"
                 alt=""
