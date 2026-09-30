@@ -19,7 +19,7 @@ export function ServicesGrid() {
                 title={service.title}
                 description={service.description}
                 image={service.image}
-                price={service.price}
+                // price={service.price}
               />
             </StaggerItem>
           ))}

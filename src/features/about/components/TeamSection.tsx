@@ -25,11 +25,11 @@ const TEAM = [
     shape: "teal" as const,
   },
   {
-    name: "Priya Nandan",
-    role: "Airline & Crate Specialist",
+    name: "Daniel Foster",
+    role: "Customs & Routing Manager",
     image: "/51d00ea90b2aaf4c5995ea414107a97b2f8e59c2.svg",
     shape: "pink" as const,
-  },
+  }
 ] as const;
 
 export function TeamSection() {

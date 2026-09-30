@@ -152,11 +152,11 @@ export const FAQS = [
     answer:
       "Yes. Our team coordinates health certificates, microchip checks, and destination requirements so your pet is travel-ready.",
   },
-  {
-    question: "What is included in pet boarding?",
-    answer:
-      "Supervised care, feeding schedules, playtime, and daily updates. Night boarding and home stays are available for longer trips.",
-  },
+  // {
+  //   question: "What is included in pet boarding?",
+  //   answer:
+  //     "Supervised care, feeding schedules, playtime, and daily updates. Night boarding and home stays are available for longer trips.",
+  // },
   {
     question: "Can I track my pet during transport?",
     answer:

@@ -6,8 +6,10 @@ import { ROUTES } from "@/constants";
 import { SERVICES } from "../data";
 import { FadeIn } from "@/components/ui/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/ui/animations/Stagger";
+import { useAppDispatch, setQuoteModalOpen } from "@/store"
 
 export function ServicesSection() {
+  const dispatch = useAppDispatch();
   return (
     <section id="services" className="bg-gold py-10 lg:py-14">
       <Container>
@@ -64,7 +66,7 @@ export function ServicesSection() {
         </div>
 
         {/* Cards */}
-        <StaggerContainer delayChildren={0.3} className="mt-8 grid gap-5 lg:grid-cols-3 lg:gap-6">
+        {/* <StaggerContainer delayChildren={0.3} className="mt-8 grid gap-5 lg:grid-cols-3 lg:gap-6">
           {SERVICES.map((service) => (
             <StaggerItem key={service.id}>
               <article
@@ -84,26 +86,75 @@ export function ServicesSection() {
                 <div className="px-1 pt-4 pb-1">
                   <h3 className="font-serif text-lg font-bold text-gold sm:text-xl">
                     {service.title}
-                  </h3>
-                  <p className="mt-1 text-base font-bold text-navy">{service.price}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                  </h3> */}
+        {/* <p className="mt-1 text-base font-bold text-navy">{service.price}</p> */}
+        {/* <p className="mt-2 text-sm leading-relaxed text-gray-600">
                     {service.description}
                   </p>
                   <Button
+                    onClick={() => dispatch(setQuoteModalOpen(true))}
+                    variant="gold"
+                    size="sm"
+                    rounded="full"
+                    className="px-5 normal-case tracking-normal shadow-sm"
+                  >
+                    Request a quote
+                  </Button>
+                </div>
+              </article>
+            </StaggerItem>
+          ))}
+        </StaggerContainer> */}
+
+        <StaggerContainer delayChildren={0.3} className="mt-8 grid gap-5 lg:grid-cols-3 lg:gap-6">
+          {SERVICES.map((service) => (
+            <StaggerItem key={service.id}>
+              <article
+                id={service.id === "relocation" ? "relocation" : undefined}
+                className="h-full rounded-[1.75rem] bg-white p-3 shadow-sm sm:p-4"
+              >
+                <div className="relative aspect-[16/11] overflow-hidden rounded-2xl">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition duration-500 hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 360px"
+                  />
+                </div>
+
+                <div className="px-1 pt-4 pb-1">
+                  <h3 className="font-serif text-lg font-bold text-navy sm:text-xl">
+                    {service.title}
+                  </h3>
+                  {/* <p className="mt-1 text-base font-bold text-navy">{service.price}</p> */}
+                  {/* Yahan min-h-[80px] add kiya hai fixed height ke liye */}
+                  <p className="mt-2 min-h-[80px] text-sm leading-relaxed text-gray-600">
+                    {service.description}
+                  </p>
+                  {/* <Button
                     href={`#${service.anchor}`}
                     variant="navy"
                     size="sm"
                     rounded="xl"
                     className="mt-4 normal-case tracking-normal"
-                  >
+                  > 
                     Read More
+                  </Button> */}
+                  <Button
+                    onClick={() => dispatch(setQuoteModalOpen(true))}
+                    variant="gold"
+                    size="sm"
+                    rounded="full"
+                    className="mt-2 px-5 normal-case tracking-normal shadow-sm"
+                  >
+                    Request a quote
                   </Button>
                 </div>
               </article>
             </StaggerItem>
           ))}
         </StaggerContainer>
-
         {/* Footer CTA */}
         <FadeIn direction="up" delay={0.6} className="mt-8 flex justify-center">
           <Button
