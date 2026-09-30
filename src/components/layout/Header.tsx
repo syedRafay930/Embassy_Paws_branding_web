@@ -11,7 +11,7 @@ import {
   toggleMobileNav,
   useAppDispatch,
   useAppSelector,
-  setQuoteModalOpen, // <-- Yeh import add kiya hai
+  setQuoteModalOpen, 
 } from "@/store";
 import { cn } from "@/utils/cn";
 
@@ -24,7 +24,15 @@ export function Header() {
   const [isHidden, setIsHidden] = useState(false);
   const lastScrollY = useRef(0);
 
+  // Mobile menu ki state ko ref mein store kar rahe hain taake scroll event asani se read kar sake
+  const isOpenRef = useRef(isOpen);
   useEffect(() => {
+    isOpenRef.current = isOpen;
+  }, [isOpen]);
+
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout; // Timer store karne ke liye
+
     function onScroll() {
       const currentScrollY = window.scrollY;
       
@@ -34,28 +42,48 @@ export function Header() {
         setIsScrolled(false);
       }
 
+      // Existing Scroll up/down hide logic
       if (currentScrollY > 653) {
         if (currentScrollY > lastScrollY.current) {
           setIsHidden(true); 
         } else {
           setIsHidden(false); 
-        }
+        } 
       } else {
         setIsHidden(false); 
       }
 
       lastScrollY.current = currentScrollY;
+
+      // === 5 SECONDS AUTO-HIDE LOGIC ===
+      // Har dafa scroll hone par pichla timer clear kar do
+      clearTimeout(timeoutId);
+
+      // Agar hum hero section se neechay hain (> 653) toh 5 sec ka timer start karo
+      if (currentScrollY > 653) {
+        timeoutId = setTimeout(() => {
+          // Agar menu open nahi hai, toh hi navbar ko hide karo
+          if (!isOpenRef.current) {
+            setIsHidden(true);
+          }
+        }, 3000); // 5000ms = 5 seconds
+      }
     }
 
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    
+    // Cleanup function: jab component remove ho toh event aur timer dono clean ho jayein
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
     <header 
       className={cn(
-        "fixed inset-x-0 top-0 z-100 pt-4 sm:pt-5 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]",
+        "fixed inset-x-0 top-0 z-100 pt-3 sm:pt-3 transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]",
         isHidden ? "-translate-y-full" : "translate-y-0"
       )}
     >
@@ -109,7 +137,6 @@ export function Header() {
               Login
             </Link>
             
-            {/* Desktop Button: Ab href nahi hai, balke Modal open kar raha hai */}
             <Button
               onClick={() => dispatch(setQuoteModalOpen(true))}
               variant="gold"
@@ -197,7 +224,6 @@ export function Header() {
               Login
             </Link>
 
-            {/* Mobile Button: Ab yeh mobile nav band kar ke Modal open karega */}
             <Button
               onClick={() => {
                 dispatch(setMobileNavOpen(false));
