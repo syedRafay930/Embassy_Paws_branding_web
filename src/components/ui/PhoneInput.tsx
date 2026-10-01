@@ -27,8 +27,8 @@ export function PhoneInput({ value, onChange, error }: PhoneInputProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   
-  // Default country Pakistan (PK) set kar rahay hain, agar na mile toh list ka pehla country
-  const defaultCountry = COUNTRIES.find((c) => c.code === "PK") || COUNTRIES[0];
+  // Default country United States (US) set kar rahay hain, agar na mile toh list ka pehla country
+  const defaultCountry = COUNTRIES.find((c) => c.code === "US") || COUNTRIES[0];
   const [selectedCountry, setSelectedCountry] = useState<Country>(defaultCountry);
   
   const dropdownRef = useRef<HTMLDivElement>(null);

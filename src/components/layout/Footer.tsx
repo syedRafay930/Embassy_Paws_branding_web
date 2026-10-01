@@ -11,8 +11,8 @@ const CONTACT_ITEMS = [
     icon: "home" as const,
   },
   {
-    label: "+1 (843) 232-6303",
-    href: "tel:+18432326303",
+    label: "+1 917-837-0680",
+    href: "tel:+19178370680",
     icon: "phone" as const,
   },
   {
